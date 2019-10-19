@@ -4,10 +4,10 @@ import { Button, InputGroup, InputGroupText, InputGroupAddon, FormInput } from "
 import Axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVideo } from "@fortawesome/free-solid-svg-icons";
-import Loader from '../components/Loader';
+import Loader from './Loader';
 
 const Movie = () => {
-const [movieQuery, setMovieQuery] = useState('');
+  const [movieQuery, setMovieQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchError, setSearchError] = useState(false)
@@ -16,44 +16,47 @@ const [movieQuery, setMovieQuery] = useState('');
     e.preventDefault()
     setMovieQuery(e.target.value);
   };
-  
-  const findMovie = () => {
+
+  const findMovie = async () => {
     setLoading(true)
-    var url = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_MOVIE_KEY}&s=${movieQuery}&type=movie`;
-    Axios.get(url).then(res => {
+    try {
+      const url = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_MOVIE_KEY}&s=${movieQuery}&type=movie`;
+      const res = await Axios.get(url)
+      const data = await res.data.Search
+      console.log(data)
       setMovies(res.data.Search)
       setSearchError(false)
-       }).catch(() => {
-       setSearchError(true)
-      }).finally(() => {
-        setLoading(false)
-    });
+    } catch (e) {
+      console.log(e.message)
+      setSearchError(true)
+    }
+    setLoading(false)
     setMovieQuery('')
   };
 
   return (
     <div>
-    {loading && <Loader /> }
-    {searchError && <p> Sorry, there was a problem </p>}
+      {loading && <Loader />}
+      {searchError && <p> Sorry, there was a problem </p>}
       <hr />
       <InputGroup seamless>
-      <InputGroupAddon type="prepend">
-        <InputGroupText>
-          <FontAwesomeIcon icon={faVideo} />
-        </InputGroupText>
-      </InputGroupAddon>
+        <InputGroupAddon type="prepend">
+          <InputGroupText>
+            <FontAwesomeIcon icon={faVideo} />
+          </InputGroupText>
+        </InputGroupAddon>
         <FormInput
           value={movieQuery}
           onChange={handleMovieQueryChange}
           placeholder='ex. Harry Potter'
-          onKeyPress={e => { if (e.key === 'Enter' ) { console.log('Pressed Enter') } }}
+          onKeyPress={e => { if (e.key === 'Enter') { console.log('Pressed Enter') } }}
         />
-        <InputGroupAddon type="append"> 
-          <Button 
-          disabled={movieQuery.length === 0} 
-          type="submit" 
-          onClick={findMovie} 
-          theme="primary">
+        <InputGroupAddon type="append">
+          <Button
+            disabled={movieQuery.length === 0}
+            type="submit"
+            onClick={findMovie}
+            theme="primary">
             Find
           </Button>
         </InputGroupAddon>
@@ -67,8 +70,8 @@ const [movieQuery, setMovieQuery] = useState('');
               Show More
             </a>
           </div>
-        ))          
-      } 
+        ))
+      }
     </div>
   );
 };
