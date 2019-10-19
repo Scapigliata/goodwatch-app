@@ -1,20 +1,25 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Movie from './Components/Movie'
+import Home from './Components/Home'
+import Header from './Components/Header'
+
 import './App.css';
 
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Goodwatch</h1>
-        <Router>
-          <Switch>
-            <Route exact path="/"/>
-            <Route path="/movie" component={Movie}/>
-          </Switch>
-        </Router>
-      </header>
+      <Header />
+      <div className="app-container">
+        <div className="app-container-box">
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/movie" component={Movie} />
+            </Switch>
+          </Router>
+        </div>
+      </div>
     </div>
   );
 }
