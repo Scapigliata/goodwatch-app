@@ -1,3 +1,4 @@
+@import './loader.module.css';
 .App {
   text-align: center;
 }
@@ -19,4 +20,85 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-container-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: ghostwhite;
+  min-height: 15vh;
+  height: 30%;
+  width: 30rem;
+  border-radius: 20px;
+  -webkit-box-shadow: 10px 10px 26px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 26px -7px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 26px -7px rgba(0,0,0,0.75);
+  padding: 20px;
+}
+
+#header-assignment {
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding: 19px;
+  font-weight: 700;
+}
+
+h4 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+}
+
+#sibling-container {
+  display: flex;
+  align-items: center;
+}
+
+#sibling-container > div {
+  flex: 1;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+#select-container {
+  width: 100%;
+}
+
+.movie-list-item {
+  padding: 20px;
+}
+
+.errorIcons {
+  display: flex;
+  justify-content: center;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;  
+}
+::-moz-placeholder {
+  font-style: italic;  
+}
+:-ms-input-placeholder {  
+  font-style: italic; 
 }
