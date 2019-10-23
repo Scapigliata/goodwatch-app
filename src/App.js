@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Movie from './Components/Movie'
 import Home from './Components/Home'
 import Header from './Components/Header'
-
+import Footer from './Components/Footer'
+import 'antd/dist/antd.css';
 import './App.css';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           </Router>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
