@@ -5,7 +5,7 @@ import { blue } from '@ant-design/colors';
 const { TextArea } = Input;
 
 const Home = () => (
-    <div>
+    <div style={{ background:"ghostwhite", width:"90%", padding:"20px", marginTop:"20px", borderRadius:"20px"}}>
         <Form>
             <Form.Item label="Title">
                 <Input />
