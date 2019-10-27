@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
   title: String,
-  movie: String,
-  author: String,
-  body: String,
+  score: String,
+  content: String,
+  img: String,
   comments: [{ body: String, date: Date }],
   date: { type: Date, default: Date.now },
   hidden: Boolean,

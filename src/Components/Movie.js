@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVideo } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
 import Loader from './Loader';
 import { Card, Icon, Avatar, Form, Button } from 'antd';
 const Meta = Card.Meta;
@@ -21,11 +20,18 @@ const Movie = () => {
     setLoading(true)
     try {
       setMovies('')
-      const url = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_MOVIE_KEY}&s=${movieQuery}&type=movie`;
-      const res = await Axios.get(url)
-      const data = await res.data.Search
-      console.log(data)
-      setMovies(res.data.Search)
+      const url = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_MOVIE_KEY}&s=${movieQuery}&type=movie`;
+      const { data } = await Axios.get(url)
+
+      console.log('data', data);
+      const { Response, Search, Error } = data;
+
+      if (Response && Response === 'False') {
+        // we lknow of an error
+        alert('fuck off');
+      }
+
+      setMovies(data.Search)
       setSearchError(false)
     } catch (e) {
       console.log(e.message)
@@ -40,13 +46,16 @@ const Movie = () => {
       <div>
         <Form onSubmit={(e) => {
           e.preventDefault()
-          console.log('form')
+          if (e.key === 13) {
+            alert('muthafer');
+          }
+          console.log('form', e)
         }}>
           <input style={{ "width": "100vw", "borderRadius": "5px" }} placeholder="eg. Nightmare before Christmas..."
             value={movieQuery}
             onChange={handleMovieQueryChange}
             placeholder='ex. Harry Potter'
-            onKeyPress={e => { if (e.key === 'Enter') { console.log('Pressed Enter') } }}
+            onKeyPress={e => { if (e.key === 'Enter') { console.log('pressed enter') } }}
           />
           <Button
             block
@@ -61,7 +70,8 @@ const Movie = () => {
       {loading && <Loader />}
       {searchError && <p> Sorry, there was a problem </p>}
       <div className="card__container">
-        {movies &&
+        <Link to="/movie/review">
+        {movies && movies.length > 0 &&
           movies.map(({ Poster, Title, Year, imdbID }) => (
             <div className="card__item" key={imdbID} >
               <Card
@@ -72,11 +82,6 @@ const Movie = () => {
                     src={Poster}
                   />
                 }
-                actions={[
-                  <Icon type="heart" key="heart" />,
-                  <Icon type="plus" key="plus" />,
-                  <Icon type="ellipsis" key="ellipsis" />,
-                ]}
               >
                 <Meta
                   title={Title}
@@ -85,7 +90,7 @@ const Movie = () => {
               </Card>
             </div>
           ))
-        }
+        }</Link>
       </div>
 
       {movies.length < 1 ? <div>
