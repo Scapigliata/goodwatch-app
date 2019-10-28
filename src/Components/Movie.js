@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Axios from "axios";
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
-import { Card, Icon, Avatar, Form, Button } from 'antd';
+import { Card, Form, Button } from 'antd';
 const Meta = Card.Meta;
 
 const Movie = () => {
@@ -24,11 +24,12 @@ const Movie = () => {
       const { data } = await Axios.get(url)
 
       console.log('data', data);
+      // eslint-disable-next-line
       const { Response, Search, Error } = data;
 
       if (Response && Response === 'False') {
         // we lknow of an error
-        alert('fuck off');
+        console.error('There was a problem')
       }
 
       setMovies(data.Search)
@@ -44,16 +45,14 @@ const Movie = () => {
   return (
     <div>
       <div>
-        <Form onSubmit={(e) => {
+        <Form onSubmit={e => {
           e.preventDefault()
-          if (e.key === 13) {
-            alert('muthafer');
-          }
-          console.log('form', e)
+          findMovie()
         }}>
           <input style={{ "width": "100vw", "borderRadius": "5px" }} placeholder="eg. Nightmare before Christmas..."
             value={movieQuery}
             onChange={handleMovieQueryChange}
+            // eslint-disable-next-line
             placeholder='ex. Harry Potter'
             onKeyPress={e => { if (e.key === 'Enter') { console.log('pressed enter') } }}
           />
@@ -70,9 +69,18 @@ const Movie = () => {
       {loading && <Loader />}
       {searchError && <p> Sorry, there was a problem </p>}
       <div className="card__container">
-        <Link to="/movie/review">
         {movies && movies.length > 0 &&
           movies.map(({ Poster, Title, Year, imdbID }) => (
+            <Link 
+            key={imdbID}
+              to={{
+              pathname:"/movie/review",
+              state:{
+                title: Title,
+                src: Poster,
+              }}
+            }>
+
             <div className="card__item" key={imdbID} >
               <Card
                 style={{ width: "100vw" }}
@@ -83,14 +91,16 @@ const Movie = () => {
                   />
                 }
               >
-                <Meta
+                {movies ?
+                  <Meta
                   title={Title}
                   description={Year}
-                />
+                /> : null}
               </Card>
             </div>
+            </Link>
           ))
-        }</Link>
+        }
       </div>
 
       {movies.length < 1 ? <div>

@@ -7,6 +7,7 @@ import Footer from './Components/Footer'
 import Review from './Components/Review'
 import MovieReview from './Components/MovieReview'
 import Login from './Components/Login'
+import Error from './Components/ErrorrPage'
 import 'antd/dist/antd.css';
 import './App.css';
 
@@ -23,6 +24,7 @@ const App = () => {
               <Route exact path="/movie/review" component={Review} />
               <Route exact path="/review/:id" component={MovieReview} />
               <Route exact path="/Login" component={Login} />
+              <Route exact path="/*" component={Error} />
             </Switch>
         </div>
       </div>

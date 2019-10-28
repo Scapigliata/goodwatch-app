@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const reviewRouter = require('./routes/reviewRouter');
+// const reviewRouter = require('./routes/reviewRouter');
 const app = express();
 const PORT = 3000;
 const Model = require('./review.model');
@@ -72,11 +72,6 @@ app.post("/movie/review", async (req, res) => {
     review.save()
     .then(d => res.json(d))
     .catch(e => res.json({ msg: e })    )
-  //   console.log('s', s)
-  //   res.send('l')
-  // } catch (e) {
-  //   res.json({ msg: e })
-  // }
 });
 
 // Delete selected post

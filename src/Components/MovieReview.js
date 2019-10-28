@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Icon, Avatar, Button } from 'antd';
-import axios from 'axios';
+import { Card, Icon, Avatar } from 'antd';
+import Axios from 'axios';
 const Meta = Card.Meta
+const URL = 'http://localhost:3000/movie/review';
 
 const MovieReview = () => {
-  const [review, setReview] = useState({
-    title: "Joker: An unreliable narration.",
-    score: "10/10",
-    content: "The film paints a dark image of reality in Gotham. Throughouot the film there are countless cases of doubling. From the recurance of clowns in cars to Arthur Fleck's iterations of banging his head into panes of glass, repetition is something that not only characterizes madness but also continues to permeate throughout the film. Reality seemingly unravels, and as the film progresses his sanity deteriorates, as mirrored in the surrounding.",
-    img: "https://pmcvariety.files.wordpress.com/2013/04/joker.jpg?w=720"
-  })
+  const [review, setReview] = useState('');
 
   const getReview = async () => {
-    // ! Get from db and render each prop
-    const review = await axios.get()
+    const { data } = await Axios.get(URL)
+    setReview(data[0]);
+    console.log(data[0]);
+    console.log('reviiew', review);
   }
+
+  useEffect(() => {
+    getReview()
+  }, [])
 
   return (
     <div className="card__item">

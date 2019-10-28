@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Affix } from 'antd';
-import { Card, Icon, Avatar, Form, Button } from 'antd';
-const Meta = Card.Meta;
+import { Icon } from 'antd';
 
 const Footer = () => {
   return (

@@ -1,6 +1,9 @@
 @import './loader.module.css';
+
 .App {
   text-align: center;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .App-logo {
@@ -28,13 +31,14 @@
 
 .app-container {
   display: flex;
+  flex: 1;
   justify-content: center;
   background: url(https://images.pexels.com/photos/773594/pexels-photo-773594.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .app-container-box {
@@ -118,7 +122,6 @@ h4 {
 
 @media only screen and (min-width: 600px) {
   .card__item {
-    width: 30%;
     flex-direction: column;
     flex-wrap: wrap;
   }

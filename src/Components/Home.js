@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Icon, Avatar, Form, Button } from 'antd';
+import { Card, Icon, Avatar } from 'antd';
 const Meta = Card.Meta;
 
 const Home = () => (

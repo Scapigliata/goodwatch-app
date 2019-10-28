@@ -69,5 +69,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 
 ### `node server.js` starts api server & establishes mongoose connection
-### `mongo` starts connection to db
 ### `mongod` starts connections
+### `mongo` starts connection to db

@@ -14,7 +14,7 @@ const Login = () => {
     return (
       <div>
         <h2>`Welcome ${response.name}`</h2>
-        <img src={response.picture}/>
+        <img alt="profile-pic" src={response.picture}/>
       </div>
     )
   }
