@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { DatePicker } from 'antd';
 import { Form, Input, Button } from 'antd';
 import Axios from 'axios';
@@ -13,6 +14,7 @@ const Review = ({ location }) => {
     const { title = "", src = "" } = location.state || {};
     const [request, setRequest] = useState({ title: title, img: src })
     const [result, setResult] = useState('')
+    const [redirect, setRedirect] = useState(false)
 
     const handleReviewPost = async (e) => {
         console.log('fdfd', request)
@@ -22,6 +24,7 @@ const Review = ({ location }) => {
         const res = await Axios.post(URL, request, { headers })
         const data = res.data
         setResult(data)
+        setRedirect(true)
     }
 
     const handleInputChange = e => {
@@ -36,6 +39,7 @@ const Review = ({ location }) => {
             background: "ghostwhite",
             width: "90%", padding: "20px", marginTop: "20px", borderRadius: "20px"
         }}>
+            {redirect ? < Redirect to="/" /> : null}
             {src && <img style={{ borderRadius: "0.1rem", height: "5rem", width: "100%", objectFit: "cover", opacity: 0.8 }} src={src} alt="movie" />}
             <Form onSubmit={handleReviewPost}>
                 {/* <Rating /> */}
