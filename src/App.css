@@ -112,37 +112,25 @@ h4 {
   font-style: italic;
 }
 
-.card__item {
-  margin: 20px 0;
-}
-
 #travolta {
   width: 100%;
 }
-/* 
-@media (min-width: 768px) { 
-  .app-container {
-    flex-direction: row;
-  }
-  .app-container-box {
-    flex-direction: row;
-  }
-  .card__container {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 2rem;
-  }
-  .card__item {
-    height: 100%;
-  }
 
-  .app-container-box > div {
-    flex: 1;
+.card-list > div {
+  width: 100vh;
+}
+
+@media (min-width: 768px) { 
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card-list > div {
+    flex: 1 0 25%;
   }
 }
 
+/* 
 @media (min-width: 992px) { 
   .card__container {
     display: flex;
@@ -154,9 +142,8 @@ h4 {
   .app-container-box > div {
     flex: 1;
   }
-} */
+} 
 
-/* 
 @media only screen and (min-width: 800px) {
   .card__container {
     display: flex;

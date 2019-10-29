@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { Card, Icon, Avatar } from 'antd';
-import Axios from 'axios';
+import axios from 'axios';
 const Meta = Card.Meta
-const URL = 'http://localhost:3000/movie/review';
 
-const MovieReview = () => {
-  const [review, setReview] = useState('');
+const MovieReview = ({ match }) => {
+  const [review, setReview] = useState(null);
 
   const getReview = async () => {
-    const { data } = await Axios.get(URL)
-    setReview(data[0]);
-    console.log(data[0]);
-    console.log('review', review);
+    const { params: { id } } = match
+    const { data } = await axios.get(`http://localhost:3000/movie/review/${id}`)
+    setReview(data);
   }
 
   useEffect(() => {
     getReview()
   }, [])
+
+  if (!review) {
+    return <Fragment />
+  }
 
   return (
     <div className="card__item">

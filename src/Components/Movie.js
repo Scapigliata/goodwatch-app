@@ -3,6 +3,7 @@ import Axios from "axios";
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
 import { Card, Form, Button } from 'antd';
+import Travolta from '../assets/travolta.gif';
 const Meta = Card.Meta;
 
 const Movie = () => {
@@ -104,7 +105,7 @@ const Movie = () => {
       </div>
 
       {movies.length < 1 ? <div>
-        <img id="travolta" style={{ position: "fixed", bottom: 0, left: 0 }} src={require('./7VE.gif')} alt="loading..." />
+        <img id="travolta" style={{ position: "fixed", bottom: 0, left: 0 }} src={Travolta} alt="loading..." />
       </div> : null}
 
     </div>
