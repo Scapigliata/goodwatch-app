@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { DatePicker } from 'antd';
 import { Form, Input, Button } from 'antd';
 import Axios from 'axios';
+import propTypes from 'prop-types';
 // import Rating from './Rating'
 const domain = 'http://localhost:'
 const endPoint = '/movie/review'
@@ -32,6 +33,10 @@ const Review = ({ location }) => {
         setRequest(inputs =>
             ({ ...inputs, [e.target.name]: e.target.value }))
         console.log('values', request)
+    }
+
+    Review.propTypes = {
+        title: propTypes.string
     }
 
     return (

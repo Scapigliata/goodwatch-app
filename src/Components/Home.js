@@ -4,7 +4,7 @@ import { Card, Icon, Avatar } from 'antd';
 const Meta = Card.Meta;
 
 const Home = () => (
-    <div>
+    <div className="card__container">
         <div className="card__item">
             <Link to="/review/1" >
                 <Card

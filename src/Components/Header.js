@@ -8,7 +8,7 @@ import { faVideo } from "@fortawesome/free-solid-svg-icons";
 const Header = () => (
   <header className="App-header">
     <Link to="/login" ><Avatar icon="user" /></Link>
-    <h1 style={{"color": "white"}}>Goodwatch</h1>
+    <h1 className="head" style={{"color": "white"}}>Goodwatch</h1>
     <Link to="/movie" style={{"paddingBottom":"5px"}} ><FontAwesomeIcon icon={faVideo} /></Link>
   </header>
 )
