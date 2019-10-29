@@ -11,8 +11,7 @@ const MovieReviews = () => {
     const { data } = await Axios.get(URL)
     console.log(data);
     setReviews(data);
-    console.log(reviews);
-    
+    console.log(reviews); 
   }
 
   useEffect(() => {

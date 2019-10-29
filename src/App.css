@@ -119,17 +119,44 @@ h4 {
 #travolta {
   width: 100%;
 }
-
-@media only screen and (min-width: 600px) {
-  .card__item {
-    flex-direction: column;
-    flex-wrap: wrap;
+/* 
+@media (min-width: 768px) { 
+  .app-container {
+    flex-direction: row;
   }
-  #travolta {
-    width: 50%;
+  .app-container-box {
+    flex-direction: row;
+  }
+  .card__container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 2rem;
+  }
+  .card__item {
+    height: 100%;
+  }
+
+  .app-container-box > div {
+    flex: 1;
   }
 }
 
+@media (min-width: 992px) { 
+  .card__container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .app-container-box > div {
+    flex: 1;
+  }
+} */
+
+/* 
 @media only screen and (min-width: 800px) {
   .card__container {
     display: flex;
@@ -144,4 +171,4 @@ h4 {
     width: 30%;
     position: block;
   }
-}
+} */
