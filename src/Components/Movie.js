@@ -44,13 +44,13 @@ const Movie = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="search-movies">
+      <div >
         <Form onSubmit={e => {
           e.preventDefault()
           findMovie()
         }}>
-          <input style={{ "width": "100vw", "borderRadius": "5px" }} placeholder="eg. Nightmare before Christmas..."
+          <input style={{ "width": "100%", "borderRadius": "5px" }} placeholder="eg. Nightmare before Christmas..."
             value={movieQuery}
             onChange={handleMovieQueryChange}
             // eslint-disable-next-line
@@ -82,7 +82,7 @@ const Movie = () => {
               }}
             }>
 
-            <div className="card__item" key={imdbID} >
+            <div className="card__item movie_item" key={imdbID} >
               <Card
                 style={{ width: "100vw" }}
                 cover={

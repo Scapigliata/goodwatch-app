@@ -84,6 +84,11 @@ h4 {
   letter-spacing: 12px;
 }
 
+.search-movies {
+  width: 100%;
+  max-width: 700px;
+}
+
 #sibling-container {
   display: flex;
   align-items: center;
@@ -190,6 +195,13 @@ h4 {
   .App-header {
     background-size: 17%;
   }
+  .search-movies {
+    margin: 2rem;
+  }
+  .ant-card-bordered{
+    width: 100%;
+    max-width: 700px;
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -215,6 +227,13 @@ h4 {
   .App-header {
     background-size: 17%;
   }
+  .search-movies {
+    margin: 2rem;
+  }
+  .ant-card-bordered{
+    width: 100%;
+    max-width: 700px;
+  }
 }
 
 @media (min-width: 920px) {
@@ -236,6 +255,13 @@ h4 {
   .x {
     max-width: 600px;
     margin: 2rem;
+  }
+  .search-movies {
+    margin: 2rem;
+  }
+  .ant-card-bordered{
+    width: 100%;
+    max-width: 700px;
   }
 }
 
