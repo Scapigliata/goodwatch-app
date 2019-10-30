@@ -47,7 +47,7 @@ const Review = ({ location }) => {
         }}>
             {redirect ? < Redirect to="/" /> : null}
             {src && <img style={{ borderRadius: "0.1rem", height: "5rem", width: "100%", objectFit: "cover", opacity: 0.8 }} src={src} alt="movie" />}
-            <Form onSubmit={handleReviewPost}>
+            <Form className="form" onSubmit={handleReviewPost}>
                 {/* <Rating /> */}
                 <Form.Item label="Title">
                     <Input name="title" onChange={handleInputChange} value={title} />

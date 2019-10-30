@@ -24,6 +24,7 @@ const MovieReview = ({ match }) => {
   return (
     <div className="card__item">
       <Card
+        className="x"
         id="joker"
         hoverable={true}
         style={{ width: "100vw" }}
