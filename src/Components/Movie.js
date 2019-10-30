@@ -105,7 +105,7 @@ const Movie = () => {
       </div>
 
       {movies.length < 1 ? <div>
-        <img id="travolta" style={{ position: "fixed", bottom: 0, left: 0 }} src={Travolta} alt="loading..." />
+        <img className="travolta" style={{ width: "70%", position: "fixed", bottom: 0, left: 0 }} src={Travolta} alt="loading..." />
       </div> : null}
 
     </div>
