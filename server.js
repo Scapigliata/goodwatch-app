@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 // const reviewRouter = require('./routes/reviewRouter');
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 const Model = require('./review.model');
 
 app.use(bodyParser.urlencoded({ extended: false }));

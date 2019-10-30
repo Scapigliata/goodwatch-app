@@ -29,7 +29,8 @@
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "shards-react": "^1.0.3"
+    "shards-react": "^1.0.3",
+    "uuid": "^3.3.3"
   },
   "scripts": {
     "lint": "eslint src/",
