@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Avatar, Divider, Col, Row } from 'antd';
-import axios from 'axios';
 
 const Settings = () => {
 
@@ -86,7 +85,7 @@ const Settings = () => {
           <DescriptionItem title="Department" content="Salt" />
         </Col>
         <Col span={12}>
-          <DescriptionItem title="Supervisor" content={<a>ICHI Dev Department</a>} />
+          <DescriptionItem title="Supervisor" content={<a href="https://www.randomgoat.com/" >ICHI Dev Department</a>} />
         </Col>
       </Row>
       <Row>

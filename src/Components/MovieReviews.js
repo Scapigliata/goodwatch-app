@@ -26,6 +26,7 @@ const MovieReviews = ({ movies, getMovies }) => {
 
   useEffect(() => {
     getReview()
+    // eslint-disable-next-line
   }, [])
 
   return (
@@ -49,7 +50,7 @@ const MovieReviews = ({ movies, getMovies }) => {
           ]}
         >
           <Meta
-            avatar={<Avatar style={{ objectFit:"cover" }} src={image[Math.floor(Math.random() * image.length)]} />}
+            avatar={<Avatar style={{ objectFit: "cover" }} src={image[Math.floor(Math.random() * image.length)]} />}
             title={title}
           />
         </Card>)}

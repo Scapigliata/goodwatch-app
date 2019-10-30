@@ -33,7 +33,7 @@
   display: flex;
   flex: 1;
   justify-content: center;
-  background: url(https://images.pexels.com/photos/773594/pexels-photo-773594.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  background: url('./assets/winter.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;

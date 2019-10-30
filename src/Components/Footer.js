@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Icon, Drawer, Button, List, Avatar, Divider, Col, Row } from 'antd';
+import { Icon, Drawer, Button } from 'antd';
 import Settings from './Settings';
 import mp3 from './tick.mp3'
 const audio = new Audio(mp3)

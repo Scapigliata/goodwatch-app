@@ -70,4 +70,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### `node server.js` starts api server & establishes mongoose connection
 ### `mongod` starts connections
-### `mongo` starts connection to db
+### `mongo` starts connection to db && `use <db_name>` to select db
+
+### To Push to Herokou: `git push heroku master`

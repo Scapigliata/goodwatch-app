@@ -15,7 +15,7 @@ const MovieReview = ({ match }) => {
 
   useEffect(() => {
     getReview()
-  }, [])
+  })
 
   if (!review) {
     return <Fragment />

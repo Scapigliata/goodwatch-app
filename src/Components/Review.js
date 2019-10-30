@@ -26,6 +26,7 @@ const Review = ({ location }) => {
         const data = res.data
         setResult(data)
         setRedirect(true)
+        console.log(result)
     }
 
     const handleInputChange = e => {
