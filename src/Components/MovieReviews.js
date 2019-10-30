@@ -7,6 +7,7 @@ import axios from 'axios';
 
 const Meta = Card.Meta
 const URL = 'http://localhost:3000/movie/review';
+// const URL = process.env === 'DEV' ? 'http://localhost:5000/movie/review' : 'https://goodwatch.herokuapp.com/'
 
 const MovieReviews = ({ movies, getMovies }) => {
   const [image, setImage] = useState([])
@@ -48,7 +49,7 @@ const MovieReviews = ({ movies, getMovies }) => {
           ]}
         >
           <Meta
-            avatar={<Avatar src={image[Math.floor(Math.random() * image.length)]} />}
+            avatar={<Avatar style={{ objectFit:"cover" }} src={image[Math.floor(Math.random() * image.length)]} />}
             title={title}
           />
         </Card>)}

@@ -33,6 +33,7 @@
     "uuid": "^3.3.3"
   },
   "scripts": {
+    "proxy": "http://localhost:3000",
     "lint": "eslint src/",
     "start": "react-scripts start",
     "build": "react-scripts build",
