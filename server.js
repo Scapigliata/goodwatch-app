@@ -11,7 +11,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // app.use('/movie/review', reviewRouter);
 require('dotenv/config');
-console.log(URL)
 
 // Connect to MongoDB
 mongoose.connect(

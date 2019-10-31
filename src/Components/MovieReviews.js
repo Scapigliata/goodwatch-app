@@ -58,9 +58,11 @@ const MovieReviews = ({ movies, getMovies }) => {
                 title={title}
               />
             </Card>
-            <div className="flip-card-back"><h1>{title}</h1><hr />
-              From which we spring Rig Veda courage of our questions paroxysm of global death Vangelis star stuff harvesting star light. Inconspicuous motes of rock and gas inconspicuous motes of rock and gas realm of the galaxies rich in heavy atoms at the edge of forever Apollonius of Perga. Extraordinary claims require extraordinary evidence cosmic ocean the sky calls to us hydrogen atoms invent the universe citizens of distant epochs and billions upon billions upon billions upon billions upon billions upon billions upon billions.
-            </div>
+            <Link to={`/review/${_id}`} >
+              <div style={{paddingTop: "1rem"}} className="flip-card-back"><h2>{title}</h2><hr />
+                <p >From which we spring Rig Veda courage of our questions paroxysm of global death Vangelis star stuff harvesting star light. Inconspicuous motes of rock and gas inconspicuous motes of rock and gas realm of the galaxies rich in heavy atoms at the edge of forever Apollonius of Perga. Extraordinary claims require extraordinary evidence cosmic ocean the sky calls to us hydrogen atoms invent the universe citizens of distant epochs and billions upon billions upon billions upon billions upon billions upon billions upon billions.</p>
+              </div>
+            </Link>
           </div>
         </div>)}
     </div>
