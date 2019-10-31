@@ -32,8 +32,7 @@ const MovieReviews = ({ movies, getMovies }) => {
   return (
     <div className="card-list">
       {movies.map(({ _id, title, score, content, img }) =>
-        <div className="flip-card">
-          <div class="flip-card-inner">
+        <div key={_id} className="flip-card">
             <Card
               className="card_item flip-card-front"
               key={_id}
@@ -41,10 +40,11 @@ const MovieReviews = ({ movies, getMovies }) => {
               hoverable={true}
               cover={
                 <Link to={`/review/${_id}`} >
+                      <div className="flip-card-inner">
                   <img
                     alt="review"
                     src={img}
-                  />
+                  /></div>
                 </Link>
               } actions={[
                 <button style={{ "border": "none", background: "none" }} onClick={() => console.log('btn')}><Icon type="heart" key="heart" /></button>,
@@ -58,7 +58,7 @@ const MovieReviews = ({ movies, getMovies }) => {
                 avatar={<Avatar style={{ objectFit: "cover" }} src={image[Math.floor(Math.random() * image.length)]} />}
                 title={title}
               /></div>
-            </Card></div></div>)}
+            </Card></div>)}
     </div>
   )
 }
