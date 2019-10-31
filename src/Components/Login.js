@@ -7,13 +7,17 @@ const GOOGLE_ID = process.env.REACT_APP_GOOOGLE_ID
 
 const Login = (props) => {
   const responseFacebook = (response) => {
-    console.log('Facebook: ', response);
+    console.log('Facebook: ', response.name);
     console.log(FB_ID, GOOGLE_ID)
+    props.history.replace("/profile")
+    localStorage.setItem('name', response.name)
   }
 
   const responseGoogle = response => {
-    console.log(response)
+    console.log('Google response: ', response.profileObj.name)
+    const name = response.profileObj.name
     props.history.replace("/profile")
+    localStorage.setItem('name', name)
   }
   
   const responseFail = (response) => {
