@@ -33,6 +33,7 @@ const MovieReviews = ({ movies, getMovies }) => {
     <div className="card-list">
       {movies.map(({ _id, title, score, content, img }) =>
         <div key={_id} className="flip-card">
+          <div key={_id} className="flip-card-inner">
             <Card
               className="card_item flip-card-front"
               key={_id}
@@ -40,11 +41,11 @@ const MovieReviews = ({ movies, getMovies }) => {
               hoverable={true}
               cover={
                 <Link to={`/review/${_id}`} >
-                      <div className="flip-card-inner">
                   <img
+                    className=""
                     alt="review"
                     src={img}
-                  /></div>
+                  />
                 </Link>
               } actions={[
                 <button style={{ "border": "none", background: "none" }} onClick={() => console.log('btn')}><Icon type="heart" key="heart" /></button>,
@@ -52,13 +53,16 @@ const MovieReviews = ({ movies, getMovies }) => {
                 <button style={{ "border": "none", background: "none" }} onClick={() => console.log('btn')}><Icon type="ellipsis" key="ellipsis" /></button>,
               ]}
             >
-              <div className="flip-card-back">
-
               <Meta
                 avatar={<Avatar style={{ objectFit: "cover" }} src={image[Math.floor(Math.random() * image.length)]} />}
                 title={title}
-              /></div>
-            </Card></div>)}
+              />
+            </Card>
+            <div class="flip-card-back"><h1>{title}</h1><hr />
+            From which we spring Rig Veda courage of our questions paroxysm of global death Vangelis star stuff harvesting star light. Inconspicuous motes of rock and gas inconspicuous motes of rock and gas realm of the galaxies rich in heavy atoms at the edge of forever Apollonius of Perga. Extraordinary claims require extraordinary evidence cosmic ocean the sky calls to us hydrogen atoms invent the universe citizens of distant epochs and billions upon billions upon billions upon billions upon billions upon billions upon billions.
+            </div>
+          </div>
+        </div>)}
     </div>
   )
 }
