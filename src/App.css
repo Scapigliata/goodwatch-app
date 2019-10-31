@@ -1,7 +1,5 @@
 @import './loader.module.css';
 @import './signup.module.css';
-
-
 * {
   box-sizing: border-box;
 }
@@ -170,13 +168,34 @@ h4 {
   display: none;
 }
 
+.searchbar {
+  position: absolute;
+  top: 0;
+}
+
+.searchbar__input {
+  background: rgb(173, 150, 226);
+  border-radius: 5px;
+  border: none;
+}
+
 @media (min-width: 700px) {
+  .searchbar {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+  .searchbar__input {
+    background: rgb(249, 247, 255);
+  }
   .card-list {
     display: flex;
     flex-wrap: wrap;
   }
   .card-list>div {
     flex: 1 0 25%;
+    height: 450px;
+    max-width: 500px;
   }
   .card-list>div img {
     width: 100%;
@@ -230,19 +249,27 @@ h4 {
     color: black;
     background-color: ghostwhite;
     transform: rotateY(180deg);
-    height: 430px;
+    height: 450px;
     text-overflow: ellipsis;
     padding: 2rem;
+    max-width: 500px;
   }
 }
 
 @media only screen and (min-width: 800px) {
+  .searchbar {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
   .card-list {
     display: flex;
     flex-wrap: wrap;
   }
   .card-list>div {
     flex: 1 0 25%;
+    height: 450px;
+    max-width: 500px;
   }
   .card-list>div img {
     width: 100%;
@@ -269,12 +296,19 @@ h4 {
 }
 
 @media (min-width: 920px) {
+  .searchbar {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
   .card-list {
     display: flex;
     flex-wrap: wrap;
   }
   .card-list>div {
     flex: 1 0 25%;
+    height: 450px;
+    max-width: 500px;
   }
   .card-list>div img {
     width: 100%;
@@ -329,13 +363,7 @@ h4 {
   border-radius: 50%;
 }
 
-.searchbar {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-}
-
-.card__title-x > span {
+.card__title-x>span {
   color: #5468ff;
-  background: rgba(84,104,255,.1);
+  background: rgba(84, 104, 255, .1);
 }

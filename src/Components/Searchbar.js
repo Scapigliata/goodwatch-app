@@ -9,7 +9,7 @@ const SearchBar = ({ value, onChange }) => {
 
     return (
         <div className="searchbar">
-            <input value={value} onChange={handleTextChange} />
+            <input  className="searchbar__input" placeholder=" Find review ..." value={value} onChange={handleTextChange} />
         </div>
     )
 }
