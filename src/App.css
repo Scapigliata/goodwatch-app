@@ -1,4 +1,6 @@
 @import './loader.module.css';
+@import './signup.module.css';
+
 
 * {
   box-sizing: border-box;

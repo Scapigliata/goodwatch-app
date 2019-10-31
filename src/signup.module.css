@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+body {
+  background: #ebe8e1;
+  font-weight: 100;
+  font-family: Open Sans;
+}
+
+.signup__container {
+  height: 80%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 50px auto;
+  padding: 0;
+}
+
+.signup__box1 {
+  background: #3A1C71;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ;
+  height: 500px;
+  width: 300px;
+  color: white;
+  letter-spacing: 5px
+}
+
+.signup__box2 {
+  display: flex;
+  background: white;
+  height: 500px;
+  width: 300px;
+}
+
+.signup__boxx {
+  margin: 20px;
+}
+
+.signup__header {
+  height: 300px;
+  width: 100%;
+}
+
+.signup__astronaut {
+  transform: scale(0.3) translateY(-510px);
+}
+
+.signup__logo {
+  height: 100px;
+  width: 100px;
+  transform: scale(0.18);
+  margin-bottom: 1rem;
+}
+
+.signup__main-text {
+  color: white;
+  padding: 10px;
+}
+
+.signup__google {
+  color: white;
+  background: blue;
+  width: 200px;
+  height: 40px;
+  margin: 20px;
+}
+
+.signup__account {
+  color: white;
+  background: orange;
+  width: 200px;
+  height: 40px;
+  margin: 20px;
+}
+
+.signup__border {
+  border-bottom: 2px solid #ebe8e1;
+  margin: 20px;
+}
+
+.signup__input {
+  width: 200px;
+  height: 30px;
+}
+
+.signup__form {
+  text-align: left;
+}

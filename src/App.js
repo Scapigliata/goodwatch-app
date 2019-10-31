@@ -7,6 +7,8 @@ import Review from './Components/Review'
 import MovieReview from './Components/MovieReview'
 import MovieReviews from './Components/MovieReviews'
 import Login from './Components/Login'
+import Profile from './Components/Profile'
+import SignUp from './Components/SignUp'
 import Error from './Components/ErrorPage'
 import 'antd/dist/antd.css';
 import './App.css';
@@ -19,11 +21,12 @@ const App = () => (
         <div className="app-container-box">
           <Switch>
             <Route exact path="/" component={MovieReviews} />
+            <Route exact path="/review/:id" component={MovieReview} />
             <Route exact path="/movie" component={Movie} />
             <Route exact path="/movie/review" component={Review} />
-            <Route exact path="/movie/reviews" component={MovieReviews} />
-            <Route exact path="/review/:id" component={MovieReview} />
             <Route exact path="/Login" component={Login} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/signup" component={SignUp} />
             <Route exact path="/*" component={Error} />
           </Switch>
         </div>

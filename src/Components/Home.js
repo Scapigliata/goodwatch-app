@@ -1,3 +1,5 @@
+// ! Unused component with default hard-coded Data
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Icon, Avatar } from 'antd';

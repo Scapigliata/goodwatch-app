@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Button } from 'antd';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 const FB_ID = process.env.REACT_APP_FB_APP_ID
@@ -11,7 +11,10 @@ const Login = (props) => {
     console.log(FB_ID, GOOGLE_ID)
   }
 
-  const responseGoogle = (response) => props.history.replace("/")
+  const responseGoogle = response => {
+    console.log(response)
+    props.history.replace("/profile")
+  }
   
   const responseFail = (response) => {
     console.log('no')
@@ -33,6 +36,9 @@ const Login = (props) => {
           onSuccess={responseGoogle}
           onFailure={responseFail}
         />
+      </div>
+      <div className="login__button" style={{margin: "2rem", border: "none" }}>
+      <Button href="/signup" type="danger" >Create free account</Button>
       </div>
     </div>
   );
