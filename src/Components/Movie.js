@@ -62,49 +62,51 @@ const Movie = () => {
             disabled={movieQuery.length === 0}
             type="submit"
             onClick={findMovie}
-            type="primary">
+            style={{ background: 'linear-gradient(90deg, #667eea 0%,#764ba2 100% )', border: '1px solid #652f9b', fontWeight: "bolder", color: "white" }}
+            >
             Search
           </Button>
         </Form>
       </div>
       {loading && <Loader />}
-      {searchError && <p> Sorry, there was a problem </p>}
+      {searchError && <h3 style={{ color: 'red' }}> Sorry, there was a problem </h3>}
       <div className="card__container">
         {movies && movies.length > 0 &&
           movies.map(({ Poster, Title, Year, imdbID }) => (
-            <Link 
-            key={imdbID}
+            <Link
+              key={imdbID}
               to={{
-              pathname:"/movie/review",
-              state:{
-                title: Title,
-                src: Poster,
-              }}
-            }>
-
-            <div className="card__item movie_item" key={imdbID} >
-              <Card
-                style={{ width: "100vw" }}
-                cover={
-                  <img
-                    alt="review"
-                    src={Poster}
-                  />
+                pathname: "/movie/review",
+                state: {
+                  title: Title,
+                  src: Poster,
                 }
-              >
-                {movies ?
-                  <Meta
-                  title={Title}
-                  description={Year}
-                /> : null}
-              </Card>
-            </div>
+              }
+              }>
+
+              <div className="card__item movie_item" key={imdbID} >
+                <Card
+                  style={{ width: "100vw" }}
+                  cover={
+                    <img
+                      alt="review"
+                      src={Poster}
+                    />
+                  }
+                >
+                  {movies ?
+                    <Meta
+                      title={Title}
+                      description={Year}
+                    /> : null}
+                </Card>
+              </div>
             </Link>
           ))
         }
       </div>
 
-      {movies.length < 1 ? <div>
+      {movies && movies.length < 1 ? <div>
         <img className="travolta" style={{ width: "70%", position: "fixed", bottom: 0, left: 0 }} src={Travolta} alt="loading..." />
       </div> : null}
 
