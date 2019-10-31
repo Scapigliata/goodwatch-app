@@ -10,9 +10,9 @@ const SignUp = () => {
           <div className="signup__main-text"> <h1>WHY SIGN UP?</h1></div>
           <div>
             <ul>
-              <li>Organise all your API develoment within Postman Workspaces</li>
-              <li>Sync your Postman data across devices</li>
-              <li>Backup your data to the Postman Cloud </li>
+              <li>Write and read reviews in the vibrant community of GoodFlix.</li>
+              <li>Manage your movies and reviews by linking accounts.</li>
+              <li>Backup your data to the GoodFlix Cloud. </li>
               <li>It's free!</li>
             </ul>
           </div>
