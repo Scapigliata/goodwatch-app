@@ -50,13 +50,13 @@ const Review = ({ location }) => {
             <Form className="form" onSubmit={handleReviewPost}>
                 {/* <Rating /> */}
                 <Form.Item label="Title">
-                    <Input name="title" onChange={handleInputChange} value={title} />
+                    <Input  placeholder="ex. The Joker" name="title" onChange={handleInputChange} value={title} />
                 </Form.Item>
                 <Form.Item label="Score">
-                    <Input name="score" onChange={handleInputChange} />
+                    <Input placeholder="ex. 9/10" name="score" onChange={handleInputChange} />
                 </Form.Item>
                 <Form.Item label="Review">
-                    <TextArea name="content" onChange={handleInputChange} />
+                    <TextArea  placeholder="Much good. Yes." name="content" onChange={handleInputChange} />
                 </Form.Item>
                 <Form.Item name="date" label="Date">
                     <DatePicker />

@@ -23,7 +23,7 @@ const Footer = () => {
         to="/movie/reviews">
           <Icon type="setting" key="setting" /></Button>
       <Drawer
-        width={500}
+        width={300}
         placement="right"
         closable={true}
         onClose={handleDrawer}

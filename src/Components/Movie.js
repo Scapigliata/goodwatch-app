@@ -62,7 +62,7 @@ const Movie = () => {
             disabled={movieQuery.length === 0}
             type="submit"
             onClick={findMovie}
-            theme="primary">
+            type="primary">
             Search
           </Button>
         </Form>
