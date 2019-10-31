@@ -32,29 +32,33 @@ const MovieReviews = ({ movies, getMovies }) => {
   return (
     <div className="card-list">
       {movies.map(({ _id, title, score, content, img }) =>
-        <Card
-          key={_id}
-          id="joker"
-          hoverable={true}
-          cover={
-            <Link to={`/review/${_id}`} >
-              <img
-                alt="review"
-                src={img}
-              />
-            </Link>
-          } actions={[
-            <button style={{ "border": "none", background: "none" }} onClick={() => console.log('btn')}><Icon type="heart" key="heart" /></button>,
-            <button style={{ "border": "none", background: "none" }} onClick={() => console.log('btn')}><Icon type="message" key="message" /></button>,
-            <button style={{ "border": "none", background: "none" }} onClick={() => console.log('btn')}><Icon type="ellipsis" key="ellipsis" /></button>,
-          ]}
-        >
-          <Meta
-            avatar={<Avatar style={{ objectFit: "cover" }} src={image[Math.floor(Math.random() * image.length)]} />}
-            title={title}
-          />
-        </Card>)}
-      <div className="flip-card-back"></div>
+        <div className="flip-card">
+          <div class="flip-card-inner">
+            <Card
+              className="card_item flip-card-front"
+              key={_id}
+              id="joker"
+              hoverable={true}
+              cover={
+                <Link to={`/review/${_id}`} >
+                  <img
+                    alt="review"
+                    src={img}
+                  />
+                </Link>
+              } actions={[
+                <button style={{ "border": "none", background: "none" }} onClick={() => console.log('btn')}><Icon type="heart" key="heart" /></button>,
+                <button style={{ "border": "none", background: "none" }} onClick={() => console.log('btn')}><Icon type="message" key="message" /></button>,
+                <button style={{ "border": "none", background: "none" }} onClick={() => console.log('btn')}><Icon type="ellipsis" key="ellipsis" /></button>,
+              ]}
+            >
+              <div className="flip-card-back">
+
+              <Meta
+                avatar={<Avatar style={{ objectFit: "cover" }} src={image[Math.floor(Math.random() * image.length)]} />}
+                title={title}
+              /></div>
+            </Card></div></div>)}
     </div>
   )
 }

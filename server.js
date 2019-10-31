@@ -5,11 +5,13 @@ const bodyParser = require("body-parser");
 const app = express();
 const PORT = 3000;
 const Model = require('./review.model');
+const URL = process.env.REACT_APP_MONGO
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // app.use('/movie/review', reviewRouter);
 require('dotenv/config');
+console.log(URL)
 
 // Connect to MongoDB
 mongoose.connect(
