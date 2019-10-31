@@ -307,3 +307,24 @@ h4 {
     transform: translateX(0)
   }
 }
+
+.profile__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: url('./assets/poly.jpg');
+  height: 500px;
+  width: 400px;
+  margin: 2rem;
+  border-radius: 5px;
+  background-size: cover;
+}
+
+.profile__user {
+  margin: 2rem;
+  background: url('./assets//user.webp');
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
