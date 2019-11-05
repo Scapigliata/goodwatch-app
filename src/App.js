@@ -10,6 +10,7 @@ import Login from './Components/Login'
 import Profile from './Components/Profile'
 import SignUp from './Components/SignUp'
 import Error from './Components/ErrorPage'
+import { context } from './utils/context'
 import 'antd/dist/antd.css';
 import './App.css';
 
@@ -20,14 +21,16 @@ const App = () => (
       <div className="app-container">
         <div className="app-container-box">
           <Switch>
-            <Route exact path="/" component={MovieReviews} />
-            <Route exact path="/review/:id" component={MovieReview} />
-            <Route exact path="/movie" component={Movie} />
-            <Route exact path="/movie/review" component={Review} />
-            <Route exact path="/Login" component={Login} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/*" component={Error} />
+            <context.Provider value="Hello from context">
+              <Route exact path="/" component={MovieReviews} />
+              <Route exact path="/review/:id" component={MovieReview} />
+              <Route exact path="/movie" component={Movie} />
+              <Route exact path="/movie/review" component={Review} />
+              <Route exact path="/Login" component={Login} />
+              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/signup" component={SignUp} />
+            </context.Provider>
+              <Route exact path="/*" component={Error} />
           </Switch>
         </div>
       </div>

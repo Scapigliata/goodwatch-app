@@ -169,18 +169,20 @@ h4 {
 }
 
 .searchbar {
+  display: none;
   position: absolute;
   top: 0;
 }
 
 .searchbar__input {
-  background: rgb(173, 150, 226);
+  background: rgb(247, 244, 252);
   border-radius: 5px;
   border: none;
 }
 
 @media (min-width: 700px) {
   .searchbar {
+    display: block;
     position: absolute;
     top: 2rem;
     right: 2rem;
@@ -258,6 +260,7 @@ h4 {
 
 @media only screen and (min-width: 800px) {
   .searchbar {
+    display: block;
     position: absolute;
     top: 2rem;
     right: 2rem;
@@ -297,6 +300,7 @@ h4 {
 
 @media (min-width: 920px) {
   .searchbar {
+    display: block;
     position: absolute;
     top: 2rem;
     right: 2rem;

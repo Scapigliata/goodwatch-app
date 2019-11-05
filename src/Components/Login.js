@@ -5,7 +5,7 @@ import GoogleLogin from 'react-google-login';
 const FB_ID = process.env.REACT_APP_FB_APP_ID
 const GOOGLE_ID = process.env.REACT_APP_GOOOGLE_ID
 
-const Login = (props) => {
+const Login = props => {
   const responseFacebook = (response) => {
     console.log('Facebook: ', response.name);
     console.log(FB_ID, GOOGLE_ID)
@@ -20,7 +20,7 @@ const Login = (props) => {
     localStorage.setItem('name', name)
   }
   
-  const responseFail = (response) => {
+  const responseFail = response => {
     console.log('no')
   }
 

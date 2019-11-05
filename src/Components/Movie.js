@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Axios from "axios";
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
 import { Card, Form, Button } from 'antd';
 import Travolta from '../assets/travolta.gif';
+import { context } from '../utils/context'
 const Meta = Card.Meta;
 
 const Movie = () => {
+  const msg = useContext(context)
   const [movieQuery, setMovieQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -25,6 +27,7 @@ const Movie = () => {
       const { data } = await Axios.get(url)
 
       console.log('data', data);
+      console.log('msg', msg);
       // eslint-disable-next-line
       const { Response, Search, Error } = data;
 

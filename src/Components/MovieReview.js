@@ -1,10 +1,21 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect, useContext, useReducer, Fragment } from 'react';
 import { Card, Icon, Avatar } from 'antd';
 import axios from 'axios';
 
 const Meta = Card.Meta
 
+// ! Usereducer hook : returns state and dispatch function
+const exampleReducer = (state, action) => {
+  switch(action.type) {
+    case 'POPULATE_DATA':
+      return action.payload
+    default:
+      return state
+  }
+}
+
 const MovieReview = ({ match }) => {
+  const [state, dispatch] = useReducer(exampleReducer, [])
   const [review, setReview] = useState(null);
 
   const getReview = async () => {
