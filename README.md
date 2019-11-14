@@ -67,9 +67,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
+### `node server.js`
 
-### `node server.js` starts api server & establishes mongoose connection
-### `mongod` starts connections
-### `mongo` starts connection to db && `use <db_name>` to select db
+This starts the api server and establishes a database connection. 
+
+### `mongod` 
+
+DB Cli.
+
+### `mongo` 
+
+Starts connection to db && `use <db_name>` to select db.
 
 ### To Push to Herokou: `git push heroku master`
